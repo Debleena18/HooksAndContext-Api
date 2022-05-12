@@ -1,21 +1,38 @@
-//This is code for Context-API
+//This code is for Custom Hook
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
 import App from './App';
-import ProductsProvider from './context/products-context';
+import configureProductsStore from './hooks-store/products-store';
+
+configureProductsStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ProductsProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ProductsProvider>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 );
 
+// //This is code for Context-API
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { BrowserRouter } from 'react-router-dom';
+
+// import './index.css';
+// import App from './App';
+// import ProductsProvider from './context/products-context';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <ProductsProvider>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </ProductsProvider>
+// );
 
 
 //Below is the Redux Code.
